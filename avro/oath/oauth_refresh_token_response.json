@@ -1,0 +1,8 @@
+{"type":"record",
+ "name":"oauth_refresh_token_response",
+ "doc":"oauth_refresh_token_response",
+ "fields":[{"name":"access_token","type":"string"},
+           {"name":"token_type","type":"string"},
+           {"name":"expires_in","type":"int"}
+          ]
+}
