@@ -1,7 +1,7 @@
 {
 	"type": "record",
 	"name": "response",
-	"namespace": "spotify_get_user_playlist_tracks",
+	"namespace": "spotify_v1_get_user_playlist_tracks",
 	"fields": 
 	[
 		{ "name": "href", "type": "string" },

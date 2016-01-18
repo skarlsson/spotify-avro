@@ -1,7 +1,7 @@
 {
 	"type": "record",
 	"name": "response",
-	"namespace": "spotify_get_artist_albums",
+	"namespace": "spotify_v1_get_me_playlists",
 	"fields": 
 	[
 		{ "name": "href", "type": "string" },
@@ -10,11 +10,10 @@
 		"type": {
 			"type": "array",
 			"items": {
-				"name": "playlist_item_t",
+				"name": "playlist_t",
 				"type": "record",
 				"fields": [
-					{ "name": "album_type",       "type": "string" },
-					{ "name": "available_markets", "type": {"type": "array", "items": "string"}},
+					{ "name": "collaborative",       "type": "boolean" },
 					{ "name": "external_urls",    "type":{"type":"map", "values":"string"}},
 					{ "name": "href", "type": "string" },
 					{ "name": "id", "type": "string" },
@@ -33,8 +32,29 @@
 						}
 					},
 					{ "name": "name", "type": "string" },
-					{ "name": "type", "type": "string" },
-					{ "name": "uri", "type": "string" }
+					{ "name": "owner", "type": 
+						{ "name": "owner_t", "type": "record", "fields":
+						[
+							{ "name": "external_urls",    "type":{"type":"map", "values":"string"}},
+							{ "name": "href", "type": "string" },
+							{ "name": "id", "type": "string" },
+							{ "name": "type", "type": "string" },
+							{ "name": "uri",  "type": "string" }
+						]
+						}
+					},
+					{ "name": "public", "type": "boolean" },
+					{ "name": "snapshot_id",  "type": "string" },
+					{"name": "tracks", "type":
+						{"name": "tracks_t", "type": "record", "fields":
+						[
+							{ "name": "href", "type": "string" },
+							{ "name": "total", "type": "int" }
+						]
+						}
+					},
+					{ "name": "type",  "type": "string" },
+					{ "name": "uri",  "type": "string" }
 					]
 					}
 				}
