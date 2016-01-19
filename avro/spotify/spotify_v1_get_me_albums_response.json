@@ -1,32 +1,33 @@
 {
 	"type" : "record",
 	"name" : "response",
-	"namespace" : "spotify_v1_get_me_saved_albums",
+	"namespace" : "spotify_v1_get_me_albums",
 	"fields" :
-	[{
+	[
+		{
 			"name" : "href",
 			"type" : "string"
-		}, {
-			"name" : "items",
-			"type" : {
+		},
+		{
+			"name" : "items", 
+			"type" : 
+			{
 				"type" : "array",
-				"items" : {
-					"name" : "item_t",
+				"items" : 
+				{
+					"name" : "saved_item_t",
 					"type" : "record",
 					"fields" :
-					[{
-							"name" : "added_at",
-							"type" : "string"
-						}, {
-							"name" : "album",
-							"type" : {
-								"name" : "album_t",
+					[
+						{ "name" : "added_at","type" : "string" },
+						{ "name" : "album", "type" : 
+							{
 								"type" : "record",
+								"name" : "album_t",
 								"fields" :
-								[{
-										"name" : "album_type",
-										"type" : "string"
-									}, {
+								[
+									{ "name" : "album_type", "type" : "string" },
+									{
 										"name" : "artists",
 										"type" : {
 											"type" : "array",
@@ -59,11 +60,29 @@
 												]
 											}
 										}
-									}, {
+									},
+									{
 										"name" : "available_markets",
 										"type" : {
 											"type" : "array",
 											"items" : "string"
+										}
+									}, 
+									{
+										"name" : "copyrights",
+										"type" : 
+										{
+											"type" : "array",
+											"items" : 
+											{
+												"name" : "copyright_t",
+												"type" : "record",
+												"fields" :
+												[
+												 { "name" : "text", "type" : "string" },
+										 		 { "name" : "type",	"type" : "string" }
+												]
+											}
 										}
 									}, {
 										"name" : "external_ids",
@@ -97,16 +116,10 @@
 												"name" : "image_t",
 												"type" : "record",
 												"fields" :
-												[{
-														"name" : "height",
-														"type" : "int"
-													}, {
-														"name" : "url",
-														"type" : "string"
-													}, {
-														"name" : "width",
-														"type" : "int"
-													}
+												[
+													{ "name": "height", "type":["null", "int"] },
+													{ "name": "url",    "type": "string" },
+													{ "name": "width",  "type": ["null", "int"] }
 												]
 											}
 										}
@@ -122,24 +135,28 @@
 									}, {
 										"name" : "release_date_precision",
 										"type" : "string"
-									}, {
+									},
+									{
 										"name" : "tracks",
-										"type" : {
-											"name" : "tracks_t",
+										"type" : 
+										{
+											"name" : "album_tracks_t",
 											"type" : "record",
 											"fields" :
-											[{
-													"name" : "href",
-													"type" : "string"
-												}, {
+											[
+												{ "name" : "href", "type" : "string" },
+												{
 													"name" : "items",
-													"type" : {
+													"type" : 
+													{
 														"type" : "array",
-														"items" : {
-															"name" : "item_t",
+														"items" : 
+														{
+															"name" : "album_track_t",
 															"type" : "record",
 															"fields" :
-															[{
+															[
+																{
 																	"name" : "artists",
 																	"type" : {
 																		"type" : "array",
@@ -172,11 +189,18 @@
 																			]
 																		}
 																	}
-																}, {
+																},
+																{
+																	"name" : "available_markets", "type" : 
+																	{
+																		"type" : "array", "items" : "string"
+																	}
+																},
+																{
 																	"name" : "disc_number",
 																	"type" : "int"
 																}, {
-																	"name" : "duration",
+																	"name" : "duration_ms",
 																	"type" : "long"
 																}, {
 																	"name" : "explicit",
@@ -196,42 +220,44 @@
 																}, {
 																	"name" : "name",
 																	"type" : "string"
-																}, {
-																	"name" : "type",
-																	"type" : "string"
-																}, {
-																	"name" : "uri",
-																	"type" : "string"
-																}
+																}, 
+																{ "name":  "preview_url", "type": ["null", "string"] },
+																{ "name" : "track_number", "type" : "int"}, 
+																{ "name" : "type", "type" : "string"}, 
+																{ "name" : "uri",  "type" : "string"}
 															]
 														}
 													}
+												},
+												{
+													"name" : "limit",
+													"type" : "int"
+												}, {
+													"name" : "next",
+													"type" : ["null", "string"]
+												}, {
+													"name" : "offset",
+													"type" : "int"
+												}, {
+													"name" : "previous",
+													"type" : ["null", "string"]
+												}, {
+													"name" : "total",
+													"type" : "int"
 												}
 											]
 										}
-									}, {
-										"name" : "limit",
-										"type" : "int"
-									}, {
-										"name" : "next",
-										"type" : ["null", "string"]
-									}, {
-										"name" : "offset",
-										"type" : "int"
-									}, {
-										"name" : "previous",
-										"type" : ["null", "string"]
-									}, {
-										"name" : "total",
-										"type" : "int"
-									}
+									},
+									{ "name" : "type", "type" : "string"}, 
+									{ "name" : "uri",  "type" : "string"}									
 								]
 							}
 						}
 					]
 				}
 			}
-		}, {
+		},
+		{
 			"name" : "limit",
 			"type" : "int"
 		}, {

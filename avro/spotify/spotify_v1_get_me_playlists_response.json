@@ -13,8 +13,8 @@
 				"name": "playlist_t",
 				"type": "record",
 				"fields": [
-					{ "name": "collaborative",       "type": "boolean" },
-					{ "name": "external_urls",    "type":{"type":"map", "values":"string"}},
+					{ "name": "collaborative", "type": "boolean" },
+					{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
 					{ "name": "href", "type": "string" },
 					{ "name": "id", "type": "string" },
 					{ "name": "images",	"type": 
@@ -24,10 +24,12 @@
 							{
 								"name": "image_t",
 								"type": "record",
-								"fields":[
-								{ "name": "height",       "type": "int" },
-								{ "name": "url",       "type": "string" },
-								{ "name": "width",       "type": "int" }]
+								"fields":
+								[
+									{ "name": "height", "type":["null", "int"] },
+									{ "name": "url",    "type": "string" },
+									{ "name": "width",  "type": ["null", "int"] }
+								]
 							}
 						}
 					},
@@ -43,9 +45,9 @@
 						]
 						}
 					},
-					{ "name": "public", "type": "boolean" },
+					{ "name": "public", "type": ["null", "boolean"] }
 					{ "name": "snapshot_id",  "type": "string" },
-					{"name": "tracks", "type":
+					{ "name": "tracks", "type":
 						{"name": "tracks_t", "type": "record", "fields":
 						[
 							{ "name": "href", "type": "string" },
