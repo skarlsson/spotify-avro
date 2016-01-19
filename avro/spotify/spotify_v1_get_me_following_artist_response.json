@@ -1,0 +1,56 @@
+{
+	"type": "record", "name": "response", "namespace": "spotify_v1_get_me_following_artist", "fields": 
+	[
+		{
+			"name": "artists", "type": 
+			{
+				"name": "result_t", "type": "record", "fields": 
+				[
+					{ "name": "items","type": 
+						{ "type": "array", "items": 
+							{
+								"name": "artist_t", "type": "record", "fields": 
+								[
+									{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
+									{ "name": "followers", "type":
+										{"name": "followers_t", "type": "record", "fields":
+											[
+												{ "name": "href", "type": ["null", "string"] },
+												{ "name": "total", "type": ["null", "long"] }
+											]
+										}
+									}
+									{ "name": "genres", "type": {"type": "array", "items": "string"}},
+									{ "name": "href", "type": "string" },
+									{ "name": "id", "type": "string" },
+									{ "name": "images",	"type": 
+										{
+											"type": "array", "items": 
+											{
+												"name": "image_t",
+												"type": "record",
+												"fields":[
+												{ "name": "height",       "type": "int" },
+												{ "name": "url",       "type": "string" },
+												{ "name": "width",       "type": "int" }]
+											}
+										}
+									},
+									{ "name": "name", "type": "string" },
+									{ "name": "popularity", "type": "int" },
+									{ "name": "type", "type": "string" },
+									{ "name": "uri", "type": "string" }
+								]
+							}
+						}
+					},
+					{ "name": "next", "type": ["null", "string"] },
+					{ "name": "total","type": "int" },
+					{ "name": "cursors", "type":{"type":"map", "values": ["null", "string"]}},
+					{ "name": "limit", "type": "int" },					
+					{ "name": "href", "type": "string" }
+				]
+			}
+		}
+	]
+}
