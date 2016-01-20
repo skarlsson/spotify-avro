@@ -47,15 +47,15 @@
 		{ "name": "public", "type": ["null", "boolean"] },
 		{ "name": "snapshot_id",  "type": "string" },
 		{ "name": "tracks", "type":
-			{"name": "playlist_tracks_t", "type": "record", "fields":
+			{"name": "track_wrapper_t", "type": "record", "fields":
 				[
 					{ "name": "href", "type": "string" },
 					{ "name": "items","type": 
 						{ "type": "array", "items": 
 							{
-								"name": "track_t", "type": "record", "fields": 
+								"name": "playlist_item_t", "type": "record", "fields": 
 								[
-									{ "name" : "added_at","type" : "string" },
+									{ "name": "added_at","type" : "string" },
 									{ "name": "added_by", "type":
 										{ "name": "added_by_t", "type": "record", "fields":
 											[
@@ -67,7 +67,7 @@
 											]
 										}
 									},
-									{ "name" : "is_local","type" : "boolean" },
+									{ "name": "is_local","type" : "boolean" },
      								{ "name": "track", "type":
 										{ "name": "track_data_t", "type": "record", "fields":
 											[
@@ -99,37 +99,38 @@
 															{ "name": "uri",  "type": "string" }
 														]
 													}
-												}
-											]
-										}
-									},
-     								{ "name": "artist", "type":
-										{ "name": "track_data_t", "type": "record", "fields":
-											[
+												},
+												{ "name": "artists","type": 
+													{ "type": "array", "items": 
+														{ "name": "artist_t", "type": "record", "fields":
+															[
+																{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
+																{ "name": "href", "type": "string" },
+																{ "name": "id", "type": "string" },
+																{ "name": "name", "type": "string" },
+																{ "name": "type", "type": "string" },
+																{ "name": "uri",  "type": "string" }
+															]
+														}
+													}
+												},
+												{ "name": "available_markets", "type": {"type": "array", "items": "string"}},
+												{ "name": "disc_number", "type": "int" },
+												{ "name": "duration_ms", "type": "long" },
+												{ "name": "explicit", "type": "boolean" },
+												{ "name": "external_ids", "type" : { "type" : "map", "values" : "string" }},
 												{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
 												{ "name": "href", "type": "string" },
 												{ "name": "id", "type": "string" },
 												{ "name": "name", "type": "string" },
+												{ "name": "popularity", "type": "int" },
+												{ "name": "preview_url", "type": ["null", "string"] },
+												{ "name": "track_number", "type": "int" },
 												{ "name": "type", "type": "string" },
 												{ "name": "uri",  "type": "string" }
-
 											]
 										}
-									},
-									{ "name": "available_markets", "type": {"type": "array", "items": "string"}},
-									{ "name": "disc_number", "type": "int" },
-									{ "name": "duration_ms", "type": "long" },
-									{ "name": "explicit", "type": "boolean" },
-									{ "name": "external_ids", "type" : { "type" : "map", "values" : "string" }},
-									{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
-									{ "name": "href", "type": "string" },
-									{ "name": "id", "type": "string" },
-									{ "name": "name", "type": "string" },
-									{ "name": "popularity", "type": "int" },
-									{ "name": "preview_url", "type": ["null", "string"] },
-									{ "name": "track_number", "type": "int" },
-									{ "name": "type", "type": "string" },
-									{ "name": "uri",  "type": "string" }
+									}
 								]
 							}
 						}
