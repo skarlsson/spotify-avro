@@ -86,6 +86,16 @@
 									{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
 									{ "name": "href", "type": "string" },
 									{ "name": "id", "type": "string" },
+									{ "name": "linked_from", "type":
+										[ "null", { "name": "linked_from_t", "type": "record", "fields":
+											[
+												{ "name": "external_urls", "type":{"type":"map", "values":"string"}},
+												{ "name": "href", "type": "string" },
+												{ "name": "id", "type": "string" },
+												{ "name": "type", "type": "string" },
+												{ "name": "uri", "type": "string" }
+											]}
+										], "default": "null"},
 									{ "name": "name", "type": "string" },
 									{ "name": "popularity", "type": "int" },
 									{ "name": "preview_url", "type": ["null", "string"] },
