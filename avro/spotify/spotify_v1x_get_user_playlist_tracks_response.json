@@ -95,7 +95,7 @@
 												{ "name": "type", "type": "string" },
 												{ "name": "uri", "type": "string" }
 											]}
-										], "default": "null"},
+										], "default": null},
 									{ "name": "name", "type": "string" },
 									{ "name": "popularity", "type": "int" },
 									{ "name": "preview_url", "type": ["null", "string"] },
