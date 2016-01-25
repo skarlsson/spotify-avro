@@ -20,7 +20,7 @@
 												{ "name": "total", "type": ["null", "long"] }
 											]
 										}
-									}
+									},
 									{ "name": "genres", "type": {"type": "array", "items": "string"}},
 									{ "name": "href", "type": "string" },
 									{ "name": "id", "type": "string" },

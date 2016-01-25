@@ -1,0 +1,18 @@
+{
+	"type": "record",
+	"name": "response",
+	"namespace": "spotify_v1_error",
+	"fields": 
+	[
+		{ "name": "error", "type": 
+			{
+				"name": "error_t", "type": "record", "fields": 
+				[
+					{ "name": "status",  "type": "int" },
+					{ "name": "message", "type": "string" }
+				]
+			}
+		}
+	]
+}
+		

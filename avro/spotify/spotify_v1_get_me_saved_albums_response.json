@@ -1,0 +1,251 @@
+{
+	"type" : "record",
+	"name" : "response",
+	"namespace" : "spotify_v1_get_me_saved_albums",
+	"fields" :
+	[{
+			"name" : "href",
+			"type" : "string"
+		}, {
+			"name" : "items",
+			"type" : {
+				"type" : "array",
+				"items" : {
+					"name" : "item_t",
+					"type" : "record",
+					"fields" :
+					[{
+							"name" : "added_at",
+							"type" : "string"
+						}, {
+							"name" : "album",
+							"type" : {
+								"name" : "album_t",
+								"type" : "record",
+								"fields" :
+								[{
+										"name" : "album_type",
+										"type" : "string"
+									}, {
+										"name" : "artists",
+										"type" : {
+											"type" : "array",
+											"items" : {
+												"name" : "album_artist_t",
+												"type" : "record",
+												"fields" :
+												[{
+														"name" : "external_urls",
+														"type" : {
+															"type" : "map",
+															"values" : "string"
+														}
+													}, {
+														"name" : "href",
+														"type" : "string"
+													}, {
+														"name" : "id",
+														"type" : "string"
+													}, {
+														"name" : "name",
+														"type" : "string"
+													}, {
+														"name" : "type",
+														"type" : "string"
+													}, {
+														"name" : "uri",
+														"type" : "string"
+													}
+												]
+											}
+										}
+									}, {
+										"name" : "available_markets",
+										"type" : {
+											"type" : "array",
+											"items" : "string"
+										}
+									}, {
+										"name" : "external_ids",
+										"type" : {
+											"type" : "map",
+											"values" : "string"
+										}
+									}, {
+										"name" : "external_urls",
+										"type" : {
+											"type" : "map",
+											"values" : "string"
+										}
+									}, {
+										"name" : "genres",
+										"type" : {
+											"type" : "array",
+											"items" : "string"
+										}
+									}, {
+										"name" : "href",
+										"type" : "string"
+									}, {
+										"name" : "id",
+										"type" : "string"
+									}, {
+										"name" : "images",
+										"type" : {
+											"type" : "array",
+											"items" : {
+												"name" : "image_t",
+												"type" : "record",
+												"fields" :
+												[{
+														"name" : "height",
+														"type" : "int"
+													}, {
+														"name" : "url",
+														"type" : "string"
+													}, {
+														"name" : "width",
+														"type" : "int"
+													}
+												]
+											}
+										}
+									}, {
+										"name" : "name",
+										"type" : "string"
+									}, {
+										"name" : "popularity",
+										"type" : "int"
+									}, {
+										"name" : "release_date",
+										"type" : "string"
+									}, {
+										"name" : "release_date_precision",
+										"type" : "string"
+									}, {
+										"name" : "tracks",
+										"type" : {
+											"name" : "tracks_t",
+											"type" : "record",
+											"fields" :
+											[{
+													"name" : "href",
+													"type" : "string"
+												}, {
+													"name" : "items",
+													"type" : {
+														"type" : "array",
+														"items" : {
+															"name" : "item_t",
+															"type" : "record",
+															"fields" :
+															[{
+																	"name" : "artists",
+																	"type" : {
+																		"type" : "array",
+																		"items" : {
+																			"name" : "track_artist_t",
+																			"type" : "record",
+																			"fields" :
+																			[{
+																					"name" : "external_urls",
+																					"type" : {
+																						"type" : "map",
+																						"values" : "string"
+																					}
+																				}, {
+																					"name" : "href",
+																					"type" : "string"
+																				}, {
+																					"name" : "id",
+																					"type" : "string"
+																				}, {
+																					"name" : "name",
+																					"type" : "string"
+																				}, {
+																					"name" : "type",
+																					"type" : "string"
+																				}, {
+																					"name" : "uri",
+																					"type" : "string"
+																				}
+																			]
+																		}
+																	}
+																}, {
+																	"name" : "disc_number",
+																	"type" : "int"
+																}, {
+																	"name" : "duration",
+																	"type" : "long"
+																}, {
+																	"name" : "explicit",
+																	"type" : "boolean"
+																}, {
+																	"name" : "external_urls",
+																	"type" : {
+																		"type" : "map",
+																		"values" : "string"
+																	}
+																}, {
+																	"name" : "href",
+																	"type" : "string"
+																}, {
+																	"name" : "id",
+																	"type" : "string"
+																}, {
+																	"name" : "name",
+																	"type" : "string"
+																}, {
+																	"name" : "type",
+																	"type" : "string"
+																}, {
+																	"name" : "uri",
+																	"type" : "string"
+																}
+															]
+														}
+													}
+												}
+											]
+										}
+									}, {
+										"name" : "limit",
+										"type" : "int"
+									}, {
+										"name" : "next",
+										"type" : ["null", "string"]
+									}, {
+										"name" : "offset",
+										"type" : "int"
+									}, {
+										"name" : "previous",
+										"type" : ["null", "string"]
+									}, {
+										"name" : "total",
+										"type" : "int"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		}, {
+			"name" : "limit",
+			"type" : "int"
+		}, {
+			"name" : "next",
+			"type" : ["null", "string"]
+		}, {
+			"name" : "offset",
+			"type" : "int"
+		}, {
+			"name" : "previous",
+			"type" : ["null", "string"]
+		}, {
+			"name" : "total",
+			"type" : "int"
+		}
+	]
+}
